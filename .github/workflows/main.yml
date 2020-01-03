@@ -34,5 +34,4 @@ jobs:
       uses: jiro4989/setup-nim-action@v1.0.1
       with:
         nim-version: ${{ env.NIM_VERSION }}
-    - run: nimble build -d:release -Y
     - run: nimble test -Y
