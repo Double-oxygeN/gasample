@@ -36,7 +36,7 @@ jobs:
     #   with:
     #     nim-version: ${{ env.NIM_VERSION }}
     - name: Install Nim
-      if: steps.cache-choosenim.outputs.cache-hit != 'true' || steps.cache-nimble.outputs.cache-hit != 'true'
+      # if: steps.cache-choosenim.outputs.cache-hit != 'true' || steps.cache-nimble.outputs.cache-hit != 'true'
       env:
         CHOOSENIM_CHOOSE_VERSION: ${{ env.NIM_VERSION }}
       run: |
