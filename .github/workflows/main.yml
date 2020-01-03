@@ -7,12 +7,13 @@ jobs:
 
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
         os:
           - ubuntu-latest
           - ubuntu-16.04
           # - windows-latest
-          # - macos-latest
+          - macos-latest
 
     env:
       NIM_VERSION: stable
@@ -37,7 +38,7 @@ jobs:
         CHOOSENIM_CHOOSE_VERSION: ${{ env.NIM_VERSION }}
       run: |
         curl https://nim-lang.org/choosenim/init.sh -sSf > init.sh
-        sh init.sh -y
+        sudo sh init.sh -y
     - name: Run test
       run: |
         export PATH=~/.nimble/bin:$PATH
