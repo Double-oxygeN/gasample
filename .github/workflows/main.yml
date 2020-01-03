@@ -43,6 +43,7 @@ jobs:
         curl https://nim-lang.org/choosenim/init.sh -sSf > init.sh
         sh init.sh -y
     - name: Run test
-      env:
-        PATH: ~/.nimble/bin:$PATH
-      run: nimble test -Y
+      run: |
+        export PATH=~/.nimble/bin:$PATH
+        echo $PATH
+        nimble test -y
