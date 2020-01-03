@@ -32,7 +32,7 @@ jobs:
         path: ~/.nimble
         key: ${{ runner.os }}-nimble-${{ hashFiles('*.nimble') }}
     - name: Setup Nim environment
-      uses: jiro4989/setup-nim-action@v1.0.1
+      uses: jiro4989/setup-nim-action@master
       with:
         nim-version: ${{ env.NIM_VERSION }}
     - run: nimble test -Y
